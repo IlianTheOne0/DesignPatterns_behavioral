@@ -1,6 +1,15 @@
-﻿namespace ClassLibrary.BehavioralPatterns;
+﻿namespace ClassLibrary.BehavioralPatterns.Command;
 
-internal class Client
+using ClassLibrary.BehavioralPatterns.Command.Implementation;
+
+public class Client
 {
-    static void Main(string[] args) { }
+    public static void Main(string[] args)
+    {
+        WelcomeCommands welcomeCommand = new WelcomeCommands();
+        FarewellCommands farewellCommand = new FarewellCommands();
+
+        Console.WriteLine(welcomeCommand.Execute("World"));
+        Console.WriteLine(farewellCommand.Execute("Tom"));
+    }
 }
